@@ -1,0 +1,19 @@
+.menuItemNois {
+  display: block;
+  width: fit-content;
+
+  padding: 10px;
+  text-align: center;
+  color: #c13502;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: 1px solid #006064;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.menuItemNois:hover {
+  background-color: #0d0e0f;
+  color: #eccf2c;
+}

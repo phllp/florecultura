@@ -1,14 +1,15 @@
-import "./bookshelf.css";
-import livro1 from "../../assets/livro-1.jpg";
-import livro2 from "../../assets/livro-2.webp";
-import livro3 from "../../assets/livro-3.jpg";
-import livro4 from "../../assets/livro-4.png";
-import livro5 from "../../assets/livro-5.png";
-import livro6 from "../../assets/livro-6.png";
-import livro7 from "../../assets/livro-7.png";
-import livro8 from "../../assets/livro-8.png";
-import livro9 from "../../assets/livro-9.png";
-import livro10 from "../../assets/livro-10.png";
+import './bookshelf.css';
+// import livro1 from "../../assets/livro-1.jpg";
+import livro1 from '@/assets/livro-1.jpg';
+import livro2 from '@/assets/livro-2.webp';
+import livro3 from '@/assets/livro-3.jpg';
+import livro4 from '@/assets/livro-4.png';
+import livro5 from '@/assets/livro-5.png';
+import livro6 from '@/assets/livro-6.png';
+import livro7 from '@/assets/livro-7.png';
+import livro8 from '@/assets/livro-8.png';
+import livro9 from '@/assets/livro-9.png';
+import livro10 from '@/assets/livro-10.png';
 
 const Bookshelf = () => {
   return (
