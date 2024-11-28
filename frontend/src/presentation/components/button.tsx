@@ -3,6 +3,7 @@ import styles from './button.module.css';
 type ButtonProps = {
   text: string;
   onClick: () => void;
+  onSubmit?: (e: React.FormEvent) => void;
   variant?: 'primary' | 'secondary' | 'contrast' | 'otros';
 };
 
@@ -14,6 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   text,
   onClick,
   variant = 'primary',
+  onSubmit,
 }) => {
   let style;
   if (variant === 'otros') {
@@ -28,7 +30,10 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <>
-      <button onClick={onClick} className={`${styles.btnBase} ${style}`}>
+      <button
+        onClick={onSubmit ? onSubmit : onClick}
+        className={`${styles.btnBase} ${style}`}
+      >
         <p className="font-bold">{text}</p>
       </button>
     </>

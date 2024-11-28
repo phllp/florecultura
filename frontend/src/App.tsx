@@ -4,18 +4,21 @@ import About from './presentation/pages/about';
 import Livros from './presentation/pages/livros';
 import Estoque from './presentation/pages/estoque';
 import Home from './presentation/pages/home';
+import { UserProvider } from './presentation/contexts/userContext';
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<BaseLayout />}>
-          <Route index element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/livros" element={<Livros />} />
-          <Route path="/estoque" element={<Estoque />} />
-        </Route>
-      </Routes>
+      <UserProvider>
+        <Routes>
+          <Route path="/" element={<BaseLayout />}>
+            <Route index element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/livros" element={<Livros />} />
+            <Route path="/estoque" element={<Estoque />} />
+          </Route>
+        </Routes>
+      </UserProvider>
     </>
   );
 }

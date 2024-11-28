@@ -15,14 +15,18 @@ public class LivroController {
 
     @Autowired
     private LivroRepository livroRepository;
-    
+
     @GetMapping()
     public List<Livro> listarLivros(
             @RequestParam(required = false) String titulo,
             @RequestParam(required = false) Integer categoria,
             @RequestParam(required = false) Integer autor) {
-        return livroRepository.buscarPorFiltros(titulo, categoria, autor);
+        return livroRepository.buscarPorFiltros(
+                titulo != null && !titulo.isEmpty() ? titulo : "",
+                categoria,
+                autor);
     }
+
     @PostMapping
     public Livro criarLivro(@RequestBody Livro livro) {
         return livroRepository.save(livro);

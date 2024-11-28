@@ -2,6 +2,8 @@ package biblioteca.controller;
 
 import java.util.List;
 
+import biblioteca.services.UsuarioService;
+import biblioteca.utils.LoginRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,6 +22,8 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
+    @Autowired
+    private UsuarioService usuarioService;
 
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -39,6 +43,16 @@ public class UsuarioController {
     @PostMapping
     public Usuario criarUsuario(@RequestBody @Valid Usuario usuario) {
         return usuarioRepository.save(usuario);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<Object> validarLogin(@RequestBody LoginRequest loginRequest) {
+        Usuario user = usuarioService.validarCredenciais(loginRequest.getEmail(), loginRequest.getSenha());
+        if (user != null) {
+            user.setSenha("");
+            return ResponseEntity.ok(user);
+        }
+        return ResponseEntity.status(401).body("Credenciais inválidas.");
     }
 
     @PutMapping("/{id}")

@@ -1,11 +1,15 @@
-import { Link } from "react-router-dom";
-import "./header.css";
+import { Link } from 'react-router-dom';
+import './header.css';
+import { useUser } from '../contexts/userContext';
+import { UserRoles } from '../../core/entities/usuario';
 const Header = () => {
+  const { user } = useUser();
   return (
     <header className="header">
       <div>
         <p className="logo">Flor & Cultura</p>
       </div>
+      <p>Bem vindo ~{user?.nome}~</p>
       <nav>
         <ul>
           <li>
@@ -23,9 +27,11 @@ const Header = () => {
           <li>
             <a href="#">Contato</a>
           </li>
-          <li>
-            <Link to="/estoque">Estoque</Link>
-          </li>
+          {user?.role && user.role == UserRoles.ADMIN && (
+            <li>
+              <Link to="/estoque">Estoque</Link>
+            </li>
+          )}
         </ul>
       </nav>
 
