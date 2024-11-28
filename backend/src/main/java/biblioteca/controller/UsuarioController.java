@@ -47,6 +47,7 @@ public class UsuarioController {
                 .map(record -> {
                     record.setNome(usuario.getNome());
                     record.setEmail(usuario.getEmail());
+                    record.setSenha(usuario.getSenha());
                     Usuario atualizado = usuarioRepository.save(record);
                     return ResponseEntity.ok(atualizado);
                 }).orElse(ResponseEntity.notFound().build());

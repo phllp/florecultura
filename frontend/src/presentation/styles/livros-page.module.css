@@ -1,0 +1,72 @@
+.menuItem {
+  display: block;
+  width: fit-parent;
+  padding: 10px;
+  text-align: center;
+  color: #c13502;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: 1px solid #006064;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.menuItem:hover {
+  background-color: #0d0e0f;
+  color: #eccf2c;
+}
+
+.filterForm {
+  /* background: white; */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  /* max-width: 500px; */
+  /* width: 100 ; */
+  margin: 0 auto;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 20px;
+}
+
+.filterForm label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #c13502;
+  font-size: 14px;
+}
+
+.filterForm input,
+.filterForm select {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #c13502;
+}
+
+.filterForm select option {
+  color: #c13502;
+}
+
+.filterForm button {
+  background-color: #eccf2c;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: fit-content;
+}
+
+.filterForm button:hover {
+  background-color: #0d0e0f;
+  color: #eccf2c;
+}

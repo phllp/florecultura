@@ -1,19 +1,60 @@
-.menuItemNois {
-  display: block;
-  width: fit-content;
-
-  padding: 10px;
-  text-align: center;
-  color: #c13502;
-  text-decoration: none;
-  background-color: #ffffff;
-  border: 1px solid #006064;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: all 0.3s ease;
+.btnBase {
+  border-radius: 15px;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 10px;
+  padding: 10px 50px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 150px;
+  align-self: center;
+  border: none;
+  margin-top: 1rem;
 }
 
-.menuItemNois:hover {
+.btnContrast {
+  background-color: #ffffff;
+  border: 1px solid #eccf2c;
+  transition: background-color 0.5s;
+  color: #e2443c;
+}
+
+.btnContrast:hover {
   background-color: #0d0e0f;
   color: #eccf2c;
+}
+
+.btnSecond {
+  background-color: #eccf2c;
+  border: 1px solid #eccf2c;
+  transition: background-color 0.5s;
+}
+
+.btnSecond:hover {
+  background-color: #fff;
+  border: 1px solid #eccf2c;
+  color: #e2443c;
+}
+
+.btnPrimary {
+  background-color: transparent;
+  border: 1px solid #fff;
+  transition: background-color 0.5s;
+}
+
+.btnPrimary:hover {
+  background-color: #fff;
+  color: #e2443c;
+}
+
+.btnOutros {
+  background-color: transparent;
+  border: 1px solid #fff;
+  transition: background-color 0.5s;
+  padding: 15px 32px;
+  display: flex;
+}
+.btnOutros:hover {
+  background-color: #fff;
+  color: #090909;
 }

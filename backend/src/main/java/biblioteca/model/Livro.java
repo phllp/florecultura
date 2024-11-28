@@ -19,6 +19,16 @@ public class Livro {
     @Size(min = 2, message = "O título do livro precisa ter ao menos 2 caracteres")
     private String titulo;
 
+    @Column(nullable = false)
+    @NotBlank(message = "A URL da capa do livro precisa ser informada")
+    @Size(min = 5, message = "Url Inválida")
+    private String urlCapa;
+
+    @Column(nullable = false)
+    @NotBlank(message = "A descrição do livro precisa ser informada")
+    @Size(min = 10, max = 1000, message = "A descrição precisa ter entre 10 e 1000 caracteres")
+    private String descricao;
+
     @ManyToOne
     @JoinColumn(name = "autor_id", nullable = false)
     private Autor autor;
@@ -60,6 +70,22 @@ public class Livro {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public String getUrlCapa() {
+        return urlCapa;
+    }
+
+    public void setUrlCapa(String urlCapa) {
+        this.urlCapa = urlCapa;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     @JsonIgnore

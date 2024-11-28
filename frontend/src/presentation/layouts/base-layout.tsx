@@ -1,5 +1,6 @@
-import { Outlet } from "react-router-dom";
-import Header from "../components/header";
+import { Outlet } from 'react-router-dom';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 const BaseLayout = () => {
   return (
@@ -8,9 +9,7 @@ const BaseLayout = () => {
       <main>
         <Outlet />
       </main>
-      <footer className="bg-blueShadeado text-center py-8">
-        <p>&copy; 2024 Flor & Cultura. Todos os direitos reservados.</p>
-      </footer>
+      <Footer />
     </>
   );
 };

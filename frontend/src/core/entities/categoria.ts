@@ -1,4 +1,4 @@
-export type Autor = {
+export type Categoria = {
   id: number;
   nome: string;
 };

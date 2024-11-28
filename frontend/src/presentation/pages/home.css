@@ -3,7 +3,7 @@ body {
 }
 
 .hero {
-  background: url("../../assets/fundo-bem-vindo.jpg") no-repeat center center;
+  background: url('../../assets/fundo-bem-vindo.jpg') no-repeat center center;
   background-size: cover;
   height: 400px;
   display: flex;
@@ -18,7 +18,7 @@ body {
 }
 
 .hero::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -60,7 +60,7 @@ section h2 {
   color: #f1c40f;
 }
 section h1 {
-  font-family: "Sacramento", cursive;
+  font-family: 'Sacramento', cursive;
   font-size: 3rem;
   color: #f1c40f;
   letter-spacing: 2px;
@@ -70,35 +70,6 @@ section h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.book-item {
-  flex: 0 1 calc(30% - 20px);
-  margin: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s;
-  background-color: #e0e1dd;
-}
-
-.book-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.book-item img {
-  width: 100%;
-  height: auto;
-}
-
-.book-info {
-  padding: 15px;
-  color: #0d1b2a;
-}
-
-.book-info h3 {
-  margin: 10px 0;
 }
 
 @media (max-width: 768px) {
@@ -120,7 +91,7 @@ section h1 {
   align-items: center;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  background: url("../../assets/fundo-cadastro.jpg");
+  background: url('../../assets/fundo-cadastro.jpg');
 }
 .content {
   background-color: #fff;
@@ -132,7 +103,7 @@ section h1 {
   position: relative;
 }
 .content::before {
-  content: "";
+  content: '';
   position: absolute;
   background-color: #eccf2c;
   width: 40%;
@@ -164,52 +135,7 @@ section h1 {
 .description-second {
   color: #7f8c8d;
 }
-.btn {
-  border-radius: 15px;
-  text-transform: uppercase;
-  color: #fff;
-  font-size: 10px;
-  padding: 10px 50px;
-  cursor: pointer;
-  font-weight: bold;
-  width: 150px;
-  align-self: center;
-  border: none;
-  margin-top: 1rem;
-}
-.btn-outros {
-  background-color: transparent;
-  border: 1px solid #fff;
-  transition: background-color 0.5s;
-  padding: 15px 32px;
-  display: flex;
-}
-.btn-outros:hover {
-  background-color: #fff;
-  color: #090909;
-}
 
-.btn-primary {
-  background-color: transparent;
-  border: 1px solid #fff;
-  transition: background-color 0.5s;
-}
-
-.btn-primary:hover {
-  background-color: #fff;
-  color: #e2443c;
-}
-
-.btn-second {
-  background-color: #eccf2c;
-  border: 1px solid #eccf2c;
-  transition: background-color 0.5s;
-}
-.btn-second:hover {
-  background-color: #fff;
-  border: 1px solid #eccf2c;
-  color: #e2443c;
-}
 .first-content {
   display: flex;
 }
@@ -471,7 +397,6 @@ select {
 }
 
 /* Catálogo de Livro*/
-
 .container.sidebar {
   width: 300px;
   height: 400px;
@@ -481,186 +406,4 @@ select {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   justify-content: center;
-}
-
-.menu {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.menu-item {
-  display: block;
-  width: 20%;
-  margin: 10px;
-  padding: 10px;
-  text-align: center;
-  color: #c13502;
-  text-decoration: none;
-  background-color: #ffffff;
-  border: 1px solid #006064;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-.menu-item:hover {
-  background-color: #0d0e0f;
-  color: #eccf2c;
-}
-
-.filter-form {
-  background: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  display: table;
-  justify-content: center;
-}
-
-.filter-form label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #c13502;
-  font-size: 14px;
-}
-
-.filter-form input,
-.filter-form select {
-  width: 50%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-.filter-form button {
-  width: 50%;
-  padding: 10px;
-  background-color: #eccf2c;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.filter-form button:hover {
-  background-color: #0d0e0f;
-  color: #eccf2c;
-}
-
-/*Passar do livro para a descrição dele*/
-
-.book-container {
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.book-header {
-  text-align: center;
-}
-
-.book-header h1 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.book-header p {
-  font-size: 1rem;
-  color: #666;
-}
-
-.book-cover {
-  width: 300px;
-  height: auto;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.book-cover:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.book-details {
-  max-width: 800px;
-  text-align: justify;
-}
-
-.book-details h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #444;
-}
-
-.book-details p {
-  font-size: 1rem;
-  color: #555;
-}
-
-.back-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #0066cc;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.back-button:hover {
-  background-color: #004da3;
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: transparent;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #888;
-}
-
-.close-button:hover {
-  color: #444;
-}
-
-.add-cart-btn {
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.add-cart-btn:hover {
-  background-color: #c13131;
-}
-
-.add-cart-btn i {
-  margin: 0;
-  font-size: 15px;
 }

@@ -1,10 +1,10 @@
-.book-shelf h1 {
+.bookShelf h1 {
   text-align: center;
   margin: 20px 0;
   color: #eccf2c;
 }
 
-.book-items {
+.bookItems {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -12,7 +12,7 @@
   padding: 20px;
 }
 
-.book-card {
+.bookCard {
   width: 180px;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -24,25 +24,25 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.book-card:hover {
+.bookCard:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.book-card img {
+.bookCard img {
   width: 100%;
   height: auto;
 }
 
-.book-card p {
+.bookCard p {
   margin: 10px 0;
   font-weight: bold;
   color: #555;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.book-details-container {
+/* .bookDetailsContainer {
   position: fixed;
   top: 0;
   left: 0;
@@ -87,4 +87,4 @@
 
 .book-details p {
   margin-bottom: 10px;
-}
+} */

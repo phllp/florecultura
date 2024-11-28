@@ -4,11 +4,16 @@ import { Autor } from '../../../core/entities/autor';
 import axiosInstance from '../../../external/axiosInstance';
 
 type AutorFormProps = {
+  onCancel: () => void;
   onSave: () => void;
   autor?: Autor;
 };
 
-const AutorCreateForm: React.FC<AutorFormProps> = ({ onSave, autor }) => {
+const AutorCreateForm: React.FC<AutorFormProps> = ({
+  onSave,
+  autor,
+  onCancel,
+}) => {
   // State to store the form data
   const [formData, setFormData] = useState({
     nome: autor?.nome || '',
@@ -33,12 +38,12 @@ const AutorCreateForm: React.FC<AutorFormProps> = ({ onSave, autor }) => {
       if (autor) {
         // Send the form data to the API to update the author
         const response = await axiosInstance.put('/api/autores', {
-          idAutor: autor.idAutor,
+          idAutor: autor.id,
           ...formData,
         });
 
         const data = response.data;
-        console.log('Resposta da API:', data);
+        console.log('Resposta da API:', response);
 
         if (response.status === 200) {
           toast.success(data.message);
@@ -52,9 +57,10 @@ const AutorCreateForm: React.FC<AutorFormProps> = ({ onSave, autor }) => {
         // Send the form data to the API to create a new author
         const response = await axiosInstance.post('/api/autores', formData);
         const data = response.data;
-        console.log('Resposta da API:', data);
+        console.log('Resposta da API:', response);
         if (response.status == 200) {
-          toast.success(data.message);
+          console.log('Autor criado com sucesso');
+          toast.success('Autor criado com sucesso');
           setFormData({
             nome: '',
           });
@@ -75,6 +81,7 @@ const AutorCreateForm: React.FC<AutorFormProps> = ({ onSave, autor }) => {
     setFormData({
       nome: '',
     });
+    onCancel();
   };
 
   return (
@@ -100,16 +107,16 @@ const AutorCreateForm: React.FC<AutorFormProps> = ({ onSave, autor }) => {
       <div className="flex space-x-4">
         <button
           type="submit"
-          className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+          className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
         >
-          Save
+          Cadastrar
         </button>
         <button
           type="button"
           onClick={handleCancel}
           className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600"
         >
-          Cancel
+          Cancelar
         </button>
       </div>
     </form>
