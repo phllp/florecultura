@@ -4,6 +4,7 @@ import axiosInstance from '../../../external/axiosInstance';
 import { UserRoles, Usuario } from '../../../core/entities/usuario';
 import Button from '../button';
 import { useUser } from '../../contexts/userContext';
+import styles from './usuario-forms.module.css';
 
 type UsuarioManageFormProps = {
   onCancel: () => void;
@@ -149,8 +150,8 @@ const UsuarioManageForm: React.FC<UsuarioManageFormProps> = ({
   // };
 
   return (
-    <div className="form">
-      <label className="label-input" htmlFor="">
+    <div className={styles.form}>
+      <label className={styles.labelInput} htmlFor="">
         <input
           id="nome"
           name="nome"
@@ -162,7 +163,7 @@ const UsuarioManageForm: React.FC<UsuarioManageFormProps> = ({
         />
       </label>
 
-      <label className="label-input" htmlFor="">
+      <label className={styles.labelInput} htmlFor="">
         <input
           id="email"
           name="email"
@@ -174,7 +175,7 @@ const UsuarioManageForm: React.FC<UsuarioManageFormProps> = ({
         />
       </label>
 
-      <label className="label-input" htmlFor="">
+      <label className={styles.labelInput} htmlFor="">
         <input
           id="senha"
           name="senha"
@@ -186,7 +187,7 @@ const UsuarioManageForm: React.FC<UsuarioManageFormProps> = ({
         />
       </label>
 
-      <label className="role">Escolha o perfil:</label>
+      <label className={styles.role}>Escolha o perfil:</label>
       <select
         id="role"
         name="role"

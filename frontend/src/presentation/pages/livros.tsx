@@ -11,12 +11,6 @@ const Livros = () => {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
   const [autores, setAutores] = useState<Autor[]>([]);
 
-  const [formData, setFormData] = useState({
-    titulo: '',
-    autor: '',
-    categoria: '',
-  });
-
   const tituloRef = useRef('');
   const autorRef = useRef('');
   const categoriaRef = useRef('');
@@ -83,31 +77,17 @@ const Livros = () => {
       setAutores([]);
       setCategorias([]);
       setLivros([]);
-      setFormData({
-        titulo: '',
-        autor: '',
-        categoria: '',
-      });
     };
   }, []);
 
   return (
     <div className="flex flex-col px-40">
       <div className="mt-10 flex w-full  ">
-        {/* <nav className="w-fit flex flex-col">
-          <a href="#" className={styles.menuItem}>
-            Todos os Livros
-          </a>
-          <a href="#" className={styles.menuItem}>
-            Meus Livros
-          </a>
-        </nav> */}
-
         <div className={`${styles.filterForm} bg-blueShadeado`}>
           <div>
             <label htmlFor="titulo">Título:</label>
             <input
-              value={formData.titulo}
+              value={tituloRef.current.value}
               onChange={(e) => (tituloRef.current = e.target.value)}
               type="text"
               id="titulo"
@@ -121,7 +101,7 @@ const Livros = () => {
               id="autor"
               name="autor"
               onChange={(e) => (autorRef.current = e.target.value)}
-              value={formData.autor}
+              value={autorRef.current.value}
             >
               <option value="">Selecione a categoria</option>
               {autores.map((a) => (
@@ -137,7 +117,7 @@ const Livros = () => {
               id="categoria"
               name="categoria"
               onChange={(e) => (categoriaRef.current = e.target.value)}
-              value={formData.categoria}
+              value={categoriaRef.current.value}
             >
               <option value="">Selecione a categoria</option>
               {categorias.map((categoria) => (

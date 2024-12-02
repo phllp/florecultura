@@ -14,16 +14,10 @@ public class UsuarioService {
     private UsuarioRepository usuarioRepository;
 
     public Usuario validarCredenciais(String email, String senha) {
-        // Buscar usuário pelo email
         Optional<Usuario> usuarioOpt = usuarioRepository.findByEmail(email);
-
-        // Verificar se o usuário existe e se a senha está correta
         if (usuarioOpt.isPresent() && usuarioOpt.get().getSenha().equals(senha)) {
-            // Senha válida, retorna o usuário
             return usuarioOpt.get();
         }
-
-        // Senha inválida ou usuário não encontrado, retorna null ou pode lançar uma exceção
         return null;
     }
 

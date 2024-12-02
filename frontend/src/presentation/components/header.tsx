@@ -18,26 +18,13 @@ const Header = () => {
           <li>
             <Link to="/livros">Livros</Link>
           </li>
-          <li>
-            <a href="#">Eventos</a>
-          </li>
-          <li>
-            <a href="#">Sobre</a>
-          </li>
-          <li>
-            <a href="#">Contato</a>
-          </li>
           {user?.role && user.role == UserRoles.ADMIN && (
             <li>
-              <Link to="/estoque">Estoque</Link>
+              <Link to="/estoque">ESTOQUE</Link>
             </li>
           )}
         </ul>
       </nav>
-
-      {/* <div className="py-2 px-2 bg-red-500 border-2">
-        <Link to="/estoque">Gerenciar Estoque</Link>
-      </div> */}
     </header>
   );
 };

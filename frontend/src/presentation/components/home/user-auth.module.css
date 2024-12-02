@@ -1,0 +1,324 @@
+/* Parte de Cadastro e Login do APP*/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* background: url('../../assets/fundo-cadastro.jpg'); */
+  background: url('../../../assets/fundo-cadastro.jpg');
+}
+.content {
+  background-color: #fff;
+  border-radius: 15px;
+  width: 960px;
+  height: 50%;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.content::before {
+  content: '';
+  position: absolute;
+  background-color: #eccf2c;
+  width: 40%;
+  height: 100%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+
+  left: 0;
+}
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.titlePrimary {
+  color: #fff;
+}
+.titleSecond {
+  color: #eccf2c;
+}
+.description {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 30px;
+}
+.descriptionPrimary {
+  color: #fff;
+}
+.descriptionSecond {
+  color: #7f8c8d;
+}
+
+.firstContent {
+  display: flex;
+}
+.firstContent .secondColumn {
+  z-index: 11;
+}
+.firstColumn {
+  text-align: center;
+  width: 40%;
+  z-index: 10;
+}
+.secondColumn {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+}
+.form input {
+  height: 45px;
+  width: 100%;
+  border: none;
+  background-color: #ecf0f1;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #ecf0f1 inset !important;
+  -webkit-text-fill-color: #000 !important;
+}
+.labelInput {
+  background-color: #ecf0f1;
+  display: flex;
+  align-items: center;
+  margin: 8px;
+} */
+
+/*Segunda aba: cadastro*/
+
+.secondContent {
+  position: absolute;
+  display: flex;
+}
+.secondContent .firstColumn {
+  order: 2;
+  z-index: -1;
+}
+.secondContent .secondColumn {
+  order: 1;
+  z-index: -1;
+}
+
+.password {
+  font-size: 14px;
+  margin: 15px 0;
+  text-align: center;
+  color: #e2443c;
+}
+
+.password::first-letter {
+  text-transform: underline;
+}
+
+/* .role {
+  color: #eccf2c;
+  margin: 10px;
+} */
+
+select {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #fff;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.signInJs .firstContent .firstColumn {
+  z-index: -1;
+}
+
+.signInJs .secondContent .secondColumn {
+  z-index: 11;
+}
+.signInJs .secondContent .firstColumn {
+  z-index: 13;
+}
+
+.signInJs .content::before {
+  left: 60%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  animation: slidein 1.3s;
+
+  z-index: 12;
+}
+
+.signUpJs .content::before {
+  animation: slideout 1.3s;
+
+  z-index: 12;
+}
+
+.signUpJs .secondContent .firstColumn,
+.signUpJs .secondContent .secondColumn {
+  z-index: -1;
+}
+
+.signUpJs .firstContent .secondColumn {
+  z-index: 11;
+}
+
+.signUpJs .firstContent .firstColumn {
+  z-index: 13;
+}
+
+.signInJs .firstContent .secondColumn {
+  z-index: -1;
+  position: relative;
+  animation: deslocamentoEsq 1.3s;
+}
+
+.signUpJs .secondContent .secondColumn {
+  position: relative;
+  z-index: -1;
+  animation: deslocamentoDir 1.3s;
+}
+
+@keyframes deslocamentoEsq {
+  from {
+    left: 0;
+    opacity: 1;
+    z-index: 12;
+  }
+
+  25% {
+    left: -80px;
+    opacity: 0.5;
+  }
+
+  50% {
+    left: -100px;
+    opacity: 0.2;
+  }
+
+  to {
+    left: -110px;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes deslocamentoDir {
+  from {
+    left: 0;
+    z-index: 12;
+  }
+
+  25% {
+    left: 80px;
+  }
+
+  50% {
+    left: 100px;
+  }
+
+  to {
+    left: 110px;
+    z-index: -1;
+  }
+}
+
+/*ANIMAÇÃO CSS*/
+
+@keyframes slidein {
+  from {
+    left: 0;
+    width: 40%;
+  }
+
+  25% {
+    left: 5%;
+    width: 50%;
+  }
+
+  50% {
+    left: 25%;
+    width: 60%;
+  }
+
+  75% {
+    left: 45%;
+    width: 50%;
+  }
+
+  to {
+    left: 60%;
+    width: 40%;
+  }
+}
+
+@keyframes slideout {
+  from {
+    left: 60%;
+    width: 40%;
+  }
+
+  25% {
+    left: 45%;
+    width: 50%;
+  }
+
+  50% {
+    left: 25%;
+    width: 60%;
+  }
+
+  75% {
+    left: 5%;
+    width: 50%;
+  }
+
+  to {
+    left: 0;
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .form {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .form {
+    width: 100%;
+  }
+}
+/* FIM---Parte de Cadastro e Login do APP*/
+
+/* Responsividade */
+@media (max-width: 600px) {
+  input,
+  select {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* Catálogo de Livro*/
+.container.sidebar {
+  width: 300px;
+  height: 400px;
+  background-color: #bd462e;
+  color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  justify-content: center;
+}

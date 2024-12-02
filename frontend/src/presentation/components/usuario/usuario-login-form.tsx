@@ -4,6 +4,7 @@ import axiosInstance from '../../../external/axiosInstance';
 import { Usuario } from '../../../core/entities/usuario';
 import Button from '../button';
 import { useUser } from '../../contexts/userContext';
+import styles from './usuario-forms.module.css';
 
 type UsuarioLoginFormProps = {
   onCancel: () => void;
@@ -99,8 +100,8 @@ const UsuarioLoginForm: React.FC<UsuarioLoginFormProps> = ({
   // };
 
   return (
-    <div className="form">
-      <label className="label-input" htmlFor="">
+    <div className={styles.form}>
+      <label className={styles.labelInput} htmlFor="">
         <input
           id="loginEmail"
           name="loginEmail"
@@ -113,7 +114,7 @@ const UsuarioLoginForm: React.FC<UsuarioLoginFormProps> = ({
         />
       </label>
 
-      <label className="label-input" htmlFor="">
+      <label className={styles.labelInput} htmlFor="">
         <input
           id="loginSenha"
           name="loginSenha"
